@@ -10,7 +10,8 @@ pipeline {
         stage('Code Quality') {
             agent any
             steps {
-                sh 'mvn sonar:sonar -Dsonar.projectKey=sonarqube-swayam -Dsonar.host.url=http://localhost:9000'
+               sh 'mvn sonar:sonar -Dsonar.projectKey=sonarqube-swayam -Dsonar.host.url=http://localhost:9000 -X'
+
             }
         }
         stage('Test') {
